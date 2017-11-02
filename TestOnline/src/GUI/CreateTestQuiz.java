@@ -239,6 +239,11 @@ public class CreateTestQuiz extends javax.swing.JInternalFrame {
         });
 
         btnmoveout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/chevron.png"))); // NOI18N
+        btnmoveout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmoveoutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnCreateTestQuizCenterLayout = new javax.swing.GroupLayout(pnCreateTestQuizCenter);
         pnCreateTestQuizCenter.setLayout(pnCreateTestQuizCenterLayout);
@@ -312,6 +317,10 @@ public class CreateTestQuiz extends javax.swing.JInternalFrame {
         txtquestionID.setText(String.valueOf(quesID));
         selectRow = this.tblbode.getSelectedRow();
     }//GEN-LAST:event_tblbodeMouseClicked
+
+    private void btnmoveoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmoveoutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnmoveoutActionPerformed
     public void loadDataToComboxQuizID() {
 
         QuizDAO dao = new QuizDAO();

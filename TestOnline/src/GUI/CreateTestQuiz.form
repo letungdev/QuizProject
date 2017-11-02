@@ -353,6 +353,9 @@
               <Image iconType="3" name="/img/chevron.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnmoveoutActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

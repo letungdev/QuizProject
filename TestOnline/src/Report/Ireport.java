@@ -6,6 +6,7 @@
 package Report;
 
 import DAO.ConnectionManager;
+import DAO.ConnectionManager;
 import java.sql.Connection;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;

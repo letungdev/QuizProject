@@ -11,6 +11,7 @@ package GUI;
  */
 import DAO.SubjectDAO;
 import DAO.ThamGiaDAO;
+import DAO.UserDAO;
 import DAO.alert_messager;
 import DTO.SubjectDTO;
 import java.sql.ResultSet;
@@ -33,6 +34,7 @@ public class Subject extends javax.swing.JInternalFrame {
     alert_messager alt = new alert_messager();// toan cuc
     SubjectDAO subjectdao = new SubjectDAO();//toan cuc
     ThamGiaDAO thamgiadao = new ThamGiaDAO();//toan cuc
+    UserDAO taikhoan = new UserDAO();
     private static final Log log = LogFactory.getLog(Login.class);  
 
     public Subject() {
@@ -249,6 +251,11 @@ public class Subject extends javax.swing.JInternalFrame {
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/chevron (1).png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         btnRefresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/refresh.png"))); // NOI18N
         btnRefresh.setText("Refr");
@@ -491,6 +498,10 @@ public class Subject extends javax.swing.JInternalFrame {
         search(query);
     }//GEN-LAST:event_txtSearchKeyReleased
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     public void refreshSubject() {
         txtidsubject.setText("");
         txtnamesubject.setText("");
@@ -514,9 +525,9 @@ public class Subject extends javax.swing.JInternalFrame {
         }
     }
     public void loadDaTaThamGia(){
-    model1 = new DefaultTableModel(null,new Object[]{"StudentID","Student","Monhoc"});
+    model1 = new DefaultTableModel(null,new Object[]{"ID","Student","Subject"});
     ResultSet rs = this.thamgiadao.loadDataThamgia();
-        try {
+  try {
             while (rs.next()){
             model1.addRow(new Object[]{rs.getInt("matk"),rs.getString("hoten"),rs.getString("tenmonhoc")});
             }

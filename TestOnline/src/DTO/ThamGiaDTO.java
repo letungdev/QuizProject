@@ -11,22 +11,22 @@ package DTO;
  */
 public class ThamGiaDTO {
 
-    private String matk;
+    private int matk;
     private String mamonhoc;
 
     public ThamGiaDTO() {
     }
 
-    public ThamGiaDTO(String matk, String mamonhoc) {
+    public ThamGiaDTO(int matk, String mamonhoc) {
         this.matk = matk;
         this.mamonhoc = mamonhoc;
     }
 
-    public String getMatk() {
+    public int getMatk() {
         return matk;
     }
 
-    public void setMatk(String matk) {
+    public void setMatk(int matk) {
         this.matk = matk;
     }
 
